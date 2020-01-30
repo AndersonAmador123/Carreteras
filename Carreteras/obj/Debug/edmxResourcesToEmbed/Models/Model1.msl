@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BD_CARRETERASModelStoreContainer" CdmEntityContainer="BD_CARRETERASEntities">
+    <EntitySetMapping Name="tb_carreteras">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_carreteras">
+        <MappingFragment StoreEntitySet="tb_carreteras">
+          <ScalarProperty Name="car_id" ColumnName="car_id" />
+          <ScalarProperty Name="car_descripcion" ColumnName="car_descripcion" />
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="car_km_inicio" ColumnName="car_km_inicio" />
+          <ScalarProperty Name="car_km_fin" ColumnName="car_km_fin" />
+          <ScalarProperty Name="ciu_id" ColumnName="ciu_id" />
+          <ScalarProperty Name="car_finC" ColumnName="car_finC" />
+          <ScalarProperty Name="car_usuario_crea" ColumnName="car_usuario_crea" />
+          <ScalarProperty Name="car_fecha_crea" ColumnName="car_fecha_crea" />
+          <ScalarProperty Name="car_usuario_modifica" ColumnName="car_usuario_modifica" />
+          <ScalarProperty Name="car_fecha_modifica" ColumnName="car_fecha_modifica" />
+          <ScalarProperty Name="car_estado" ColumnName="car_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_carreterasXciudades">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_carreterasXciudades">
+        <MappingFragment StoreEntitySet="tb_carreterasXciudades">
+          <ScalarProperty Name="car_id" ColumnName="car_id" />
+          <ScalarProperty Name="ciu_id" ColumnName="ciu_id" />
+          <ScalarProperty Name="cc_usuario_crea" ColumnName="cc_usuario_crea" />
+          <ScalarProperty Name="cc_fecha_crea" ColumnName="cc_fecha_crea" />
+          <ScalarProperty Name="cc_usuario_modifica" ColumnName="cc_usuario_modifica" />
+          <ScalarProperty Name="cc_fecha_modifica" ColumnName="cc_fecha_modifica" />
+          <ScalarProperty Name="cc_estado" ColumnName="cc_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ciudades">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_ciudades">
+        <MappingFragment StoreEntitySet="tb_ciudades">
+          <ScalarProperty Name="ciu_id" ColumnName="ciu_id" />
+          <ScalarProperty Name="ciu_descripcion" ColumnName="ciu_descripcion" />
+          <ScalarProperty Name="dep_id" ColumnName="dep_id" />
+          <ScalarProperty Name="ciu_usuario_crea" ColumnName="ciu_usuario_crea" />
+          <ScalarProperty Name="ciu_fecha_crea" ColumnName="ciu_fecha_crea" />
+          <ScalarProperty Name="ciu_usuario_modifica" ColumnName="ciu_usuario_modifica" />
+          <ScalarProperty Name="ciu_fecha_modifica" ColumnName="ciu_fecha_modifica" />
+          <ScalarProperty Name="ciu_estado" ColumnName="ciu_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_comunas">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_comunas">
+        <MappingFragment StoreEntitySet="tb_comunas">
+          <ScalarProperty Name="com_id" ColumnName="com_id" />
+          <ScalarProperty Name="com_descripcion" ColumnName="com_descripcion" />
+          <ScalarProperty Name="com_km_inicio" ColumnName="com_km_inicio" />
+          <ScalarProperty Name="com_km_fin" ColumnName="com_km_fin" />
+          <ScalarProperty Name="tra_id" ColumnName="tra_id" />
+          <ScalarProperty Name="com_usuario_crea" ColumnName="com_usuario_crea" />
+          <ScalarProperty Name="com_fecha_crea" ColumnName="com_fecha_crea" />
+          <ScalarProperty Name="com_usuario_modifica" ColumnName="com_usuario_modifica" />
+          <ScalarProperty Name="com_fecha_modifica" ColumnName="com_fecha_modifica" />
+          <ScalarProperty Name="com_estado" ColumnName="com_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_departamentos">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_departamentos">
+        <MappingFragment StoreEntitySet="tb_departamentos">
+          <ScalarProperty Name="dep_id" ColumnName="dep_id" />
+          <ScalarProperty Name="dep_descripcion" ColumnName="dep_descripcion" />
+          <ScalarProperty Name="dep_usuario_crea" ColumnName="dep_usuario_crea" />
+          <ScalarProperty Name="dep_fecha_crea" ColumnName="dep_fecha_crea" />
+          <ScalarProperty Name="dep_usuario_modifica" ColumnName="dep_usuario_modifica" />
+          <ScalarProperty Name="dep_fecha_modifica" ColumnName="dep_fecha_modifica" />
+          <ScalarProperty Name="dep_estado" ColumnName="dep_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pantallas">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_pantallas">
+        <MappingFragment StoreEntitySet="tb_pantallas">
+          <ScalarProperty Name="pant_id" ColumnName="pant_id" />
+          <ScalarProperty Name="pant_descripcion" ColumnName="pant_descripcion" />
+          <ScalarProperty Name="pant_usuario_crea" ColumnName="pant_usuario_crea" />
+          <ScalarProperty Name="pant_fecha_crea" ColumnName="pant_fecha_crea" />
+          <ScalarProperty Name="pant_usuario_modifica" ColumnName="pant_usuario_modifica" />
+          <ScalarProperty Name="pant_fecha_modifica" ColumnName="pant_fecha_modifica" />
+          <ScalarProperty Name="pant_estado" ColumnName="pant_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pantallasXroles">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_pantallasXroles">
+        <MappingFragment StoreEntitySet="tb_pantallasXroles">
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="pant_id" ColumnName="pant_id" />
+          <ScalarProperty Name="pr_usuario_crea" ColumnName="pr_usuario_crea" />
+          <ScalarProperty Name="pr_fecha_crea" ColumnName="pr_fecha_crea" />
+          <ScalarProperty Name="pr_usuario_modifica" ColumnName="pr_usuario_modifica" />
+          <ScalarProperty Name="pr_fecha_modifica" ColumnName="pr_fecha_modifica" />
+          <ScalarProperty Name="pr_estado" ColumnName="pr_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_roles">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_roles">
+        <MappingFragment StoreEntitySet="tb_roles">
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="rol_descripcion" ColumnName="rol_descripcion" />
+          <ScalarProperty Name="rol_usuario_crea" ColumnName="rol_usuario_crea" />
+          <ScalarProperty Name="rol_fecha_crea" ColumnName="rol_fecha_crea" />
+          <ScalarProperty Name="rol_usuario_modifica" ColumnName="rol_usuario_modifica" />
+          <ScalarProperty Name="rol_fecha_modifica" ColumnName="rol_fecha_modifica" />
+          <ScalarProperty Name="rol_estado" ColumnName="rol_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tramos">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_tramos">
+        <MappingFragment StoreEntitySet="tb_tramos">
+          <ScalarProperty Name="tra_id" ColumnName="tra_id" />
+          <ScalarProperty Name="tra_descripcion" ColumnName="tra_descripcion" />
+          <ScalarProperty Name="tra_km_inicio" ColumnName="tra_km_inicio" />
+          <ScalarProperty Name="tra_km_fin" ColumnName="tra_km_fin" />
+          <ScalarProperty Name="car_id" ColumnName="car_id" />
+          <ScalarProperty Name="tra_usuario_crea" ColumnName="tra_usuario_crea" />
+          <ScalarProperty Name="tra_fecha_crea" ColumnName="tra_fecha_crea" />
+          <ScalarProperty Name="tra_usuario_modifica" ColumnName="tra_usuario_modifica" />
+          <ScalarProperty Name="tra_fecha_modifica" ColumnName="tra_fecha_modifica" />
+          <ScalarProperty Name="tra_estado" ColumnName="tra_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_categorias">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_categorias">
+        <MappingFragment StoreEntitySet="tb_categorias">
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="cat_descripcion" ColumnName="cat_descripcion" />
+          <ScalarProperty Name="cat_usuario_crea" ColumnName="cat_usuario_crea" />
+          <ScalarProperty Name="cat_fecha_crea" ColumnName="cat_fecha_crea" />
+          <ScalarProperty Name="cat_usuario_modifica" ColumnName="cat_usuario_modifica" />
+          <ScalarProperty Name="cat_fecha_modifica" ColumnName="cat_fecha_modifica" />
+          <ScalarProperty Name="cat_estado" ColumnName="cat_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_empleados">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_empleados">
+        <MappingFragment StoreEntitySet="tb_empleados">
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="emp_nombre" ColumnName="emp_nombre" />
+          <ScalarProperty Name="emp_edad" ColumnName="emp_edad" />
+          <ScalarProperty Name="emp_telefono" ColumnName="emp_telefono" />
+          <ScalarProperty Name="ciu_id" ColumnName="ciu_id" />
+          <ScalarProperty Name="emp_usuario_crea" ColumnName="emp_usuario_crea" />
+          <ScalarProperty Name="emp_fecha_crea" ColumnName="emp_fecha_crea" />
+          <ScalarProperty Name="emp_usuario_modifica" ColumnName="emp_usuario_modifica" />
+          <ScalarProperty Name="emp_fecha_modifica" ColumnName="emp_fecha_modifica" />
+          <ScalarProperty Name="emp_estado" ColumnName="emp_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_empleadosXusuarios">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_empleadosXusuarios">
+        <MappingFragment StoreEntitySet="tb_empleadosXusuarios">
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+          <ScalarProperty Name="emusu_usuario_crea" ColumnName="emusu_usuario_crea" />
+          <ScalarProperty Name="emusu_fecha_crea" ColumnName="emusu_fecha_crea" />
+          <ScalarProperty Name="emusu_usuario_modifica" ColumnName="emusu_usuario_modifica" />
+          <ScalarProperty Name="emusu_fecha_modifica" ColumnName="emusu_fecha_modifica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuarios">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_usuarios">
+        <MappingFragment StoreEntitySet="tb_usuarios">
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+          <ScalarProperty Name="usu_descripcion" ColumnName="usu_descripcion" />
+          <ScalarProperty Name="usu_password" ColumnName="usu_password" />
+          <ScalarProperty Name="usu_usuario_crea" ColumnName="usu_usuario_crea" />
+          <ScalarProperty Name="usu_fecha_crea" ColumnName="usu_fecha_crea" />
+          <ScalarProperty Name="usu_usuario_modifica" ColumnName="usu_usuario_modifica" />
+          <ScalarProperty Name="usu_fecha_modifica" ColumnName="usu_fecha_modifica" />
+          <ScalarProperty Name="usu_estado" ColumnName="usu_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuariosXroles">
+      <EntityTypeMapping TypeName="BD_CARRETERASModel.tb_usuariosXroles">
+        <MappingFragment StoreEntitySet="tb_usuariosXroles">
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="usurol_usuario_crea" ColumnName="usurol_usuario_crea" />
+          <ScalarProperty Name="usurol_fecha_crea" ColumnName="usurol_fecha_crea" />
+          <ScalarProperty Name="usurol_usuario_modifica" ColumnName="usurol_usuario_modifica" />
+          <ScalarProperty Name="usurol_fecha_modifica" ColumnName="usurol_fecha_modifica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

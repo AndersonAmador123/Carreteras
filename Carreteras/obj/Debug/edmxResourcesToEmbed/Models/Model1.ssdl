@@ -1,0 +1,845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BD_CARRETERASModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_carreteras">
+    <Key>
+      <PropertyRef Name="car_id" />
+    </Key>
+    <Property Name="car_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="car_descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="cat_id" Type="nvarchar" MaxLength="20" />
+    <Property Name="car_km_inicio" Type="nvarchar" MaxLength="100" />
+    <Property Name="car_km_fin" Type="nvarchar" MaxLength="100" />
+    <Property Name="ciu_id" Type="nvarchar" MaxLength="20" />
+    <Property Name="car_finC" Type="nvarchar" MaxLength="20" />
+    <Property Name="car_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="car_fecha_crea" Type="datetime" />
+    <Property Name="car_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="car_fecha_modifica" Type="datetime" />
+    <Property Name="car_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_carreterasXciudades">
+    <Key>
+      <PropertyRef Name="car_id" />
+      <PropertyRef Name="ciu_id" />
+    </Key>
+    <Property Name="car_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ciu_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="cc_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="cc_fecha_crea" Type="datetime" />
+    <Property Name="cc_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="cc_fecha_modifica" Type="datetime" />
+    <Property Name="cc_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_ciudades">
+    <Key>
+      <PropertyRef Name="ciu_id" />
+    </Key>
+    <Property Name="ciu_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ciu_descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="dep_id" Type="nvarchar" MaxLength="20" />
+    <Property Name="ciu_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="ciu_fecha_crea" Type="datetime" />
+    <Property Name="ciu_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="ciu_fecha_modifica" Type="datetime" />
+    <Property Name="ciu_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_comunas">
+    <Key>
+      <PropertyRef Name="com_id" />
+    </Key>
+    <Property Name="com_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="com_descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="com_km_inicio" Type="nvarchar" MaxLength="100" />
+    <Property Name="com_km_fin" Type="nvarchar" MaxLength="100" />
+    <Property Name="tra_id" Type="nvarchar" MaxLength="20" />
+    <Property Name="com_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="com_fecha_crea" Type="datetime" />
+    <Property Name="com_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="com_fecha_modifica" Type="datetime" />
+    <Property Name="com_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_departamentos">
+    <Key>
+      <PropertyRef Name="dep_id" />
+    </Key>
+    <Property Name="dep_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="dep_descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="dep_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="dep_fecha_crea" Type="datetime" />
+    <Property Name="dep_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="dep_fecha_modifica" Type="datetime" />
+    <Property Name="dep_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_pantallas">
+    <Key>
+      <PropertyRef Name="pant_id" />
+    </Key>
+    <Property Name="pant_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="pant_descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="pant_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="pant_fecha_crea" Type="datetime" />
+    <Property Name="pant_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="pant_fecha_modifica" Type="datetime" />
+    <Property Name="pant_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_pantallasXroles">
+    <Key>
+      <PropertyRef Name="rol_id" />
+      <PropertyRef Name="pant_id" />
+    </Key>
+    <Property Name="rol_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="pant_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="pr_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="pr_fecha_crea" Type="datetime" />
+    <Property Name="pr_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="pr_fecha_modifica" Type="datetime" />
+    <Property Name="pr_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_roles">
+    <Key>
+      <PropertyRef Name="rol_id" />
+    </Key>
+    <Property Name="rol_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="rol_descripcion" Type="nvarchar" MaxLength="200" />
+    <Property Name="rol_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="rol_fecha_crea" Type="datetime" />
+    <Property Name="rol_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="rol_fecha_modifica" Type="datetime" />
+    <Property Name="rol_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_tramos">
+    <Key>
+      <PropertyRef Name="tra_id" />
+    </Key>
+    <Property Name="tra_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="tra_descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="tra_km_inicio" Type="nvarchar" MaxLength="100" />
+    <Property Name="tra_km_fin" Type="nvarchar" MaxLength="100" />
+    <Property Name="car_id" Type="nvarchar" MaxLength="20" />
+    <Property Name="tra_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="tra_fecha_crea" Type="datetime" />
+    <Property Name="tra_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="tra_fecha_modifica" Type="datetime" />
+    <Property Name="tra_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_categorias">
+    <Key>
+      <PropertyRef Name="cat_id" />
+    </Key>
+    <Property Name="cat_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="cat_descripcion" Type="nvarchar" MaxLength="20" />
+    <Property Name="cat_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="cat_fecha_crea" Type="datetime" />
+    <Property Name="cat_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="cat_fecha_modifica" Type="datetime" />
+    <Property Name="cat_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_empleados">
+    <Key>
+      <PropertyRef Name="emp_id" />
+    </Key>
+    <Property Name="emp_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="emp_nombre" Type="nvarchar" MaxLength="100" />
+    <Property Name="emp_edad" Type="int" />
+    <Property Name="emp_telefono" Type="nvarchar" MaxLength="20" />
+    <Property Name="ciu_id" Type="nvarchar" MaxLength="20" />
+    <Property Name="emp_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="emp_fecha_crea" Type="datetime" />
+    <Property Name="emp_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="emp_fecha_modifica" Type="datetime" />
+    <Property Name="emp_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_empleadosXusuarios">
+    <Key>
+      <PropertyRef Name="emp_id" />
+      <PropertyRef Name="usu_id" />
+    </Key>
+    <Property Name="emp_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="usu_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="emusu_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="emusu_fecha_crea" Type="datetime" />
+    <Property Name="emusu_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="emusu_fecha_modifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_usuarios">
+    <Key>
+      <PropertyRef Name="usu_id" />
+    </Key>
+    <Property Name="usu_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="usu_descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="usu_password" Type="nvarchar(max)" />
+    <Property Name="usu_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="usu_fecha_crea" Type="datetime" />
+    <Property Name="usu_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="usu_fecha_modifica" Type="datetime" />
+    <Property Name="usu_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tb_usuariosXroles">
+    <Key>
+      <PropertyRef Name="usu_id" />
+      <PropertyRef Name="rol_id" />
+    </Key>
+    <Property Name="usu_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="rol_id" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="usurol_usuario_crea" Type="nvarchar" MaxLength="20" />
+    <Property Name="usurol_fecha_crea" Type="datetime" />
+    <Property Name="usurol_usuario_modifica" Type="nvarchar" MaxLength="20" />
+    <Property Name="usurol_fecha_modifica" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_GRAL_tb_carreteras_GRAL_tb_carreterasXciudades_car_id">
+    <End Role="tb_carreteras" Type="Self.tb_carreteras" Multiplicity="1" />
+    <End Role="tb_carreterasXciudades" Type="Self.tb_carreterasXciudades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_carreteras">
+        <PropertyRef Name="car_id" />
+      </Principal>
+      <Dependent Role="tb_carreterasXciudades">
+        <PropertyRef Name="car_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRAL_tb_carreteras_GRAL_tb_tramos_car_id">
+    <End Role="tb_carreteras" Type="Self.tb_carreteras" Multiplicity="0..1" />
+    <End Role="tb_tramos" Type="Self.tb_tramos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_carreteras">
+        <PropertyRef Name="car_id" />
+      </Principal>
+      <Dependent Role="tb_tramos">
+        <PropertyRef Name="car_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRAL_tb_categorias_GRAL_tb_carreteras_car_id">
+    <End Role="tb_categorias" Type="Self.tb_categorias" Multiplicity="0..1" />
+    <End Role="tb_carreteras" Type="Self.tb_carreteras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categorias">
+        <PropertyRef Name="cat_id" />
+      </Principal>
+      <Dependent Role="tb_carreteras">
+        <PropertyRef Name="cat_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRAL_tb_ciudad_PERSON_tb_empleados_ciu_id">
+    <End Role="tb_ciudades" Type="Self.tb_ciudades" Multiplicity="0..1" />
+    <End Role="tb_empleados" Type="Self.tb_empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudades">
+        <PropertyRef Name="ciu_id" />
+      </Principal>
+      <Dependent Role="tb_empleados">
+        <PropertyRef Name="ciu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRAL_tb_ciudades_GRAL_tb_carreteras_ciu_id">
+    <End Role="tb_ciudades" Type="Self.tb_ciudades" Multiplicity="0..1" />
+    <End Role="tb_carreteras" Type="Self.tb_carreteras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudades">
+        <PropertyRef Name="ciu_id" />
+      </Principal>
+      <Dependent Role="tb_carreteras">
+        <PropertyRef Name="ciu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRAL_tb_ciudades_GRAL_tb_ciudades_ciu_id">
+    <End Role="tb_ciudades" Type="Self.tb_ciudades" Multiplicity="1" />
+    <End Role="tb_carreterasXciudades" Type="Self.tb_carreterasXciudades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ciudades">
+        <PropertyRef Name="ciu_id" />
+      </Principal>
+      <Dependent Role="tb_carreterasXciudades">
+        <PropertyRef Name="ciu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRAL_tb_departamentos_GRAL_tb_ciudades_dep_id">
+    <End Role="tb_departamentos" Type="Self.tb_departamentos" Multiplicity="0..1" />
+    <End Role="tb_ciudades" Type="Self.tb_ciudades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_departamentos">
+        <PropertyRef Name="dep_id" />
+      </Principal>
+      <Dependent Role="tb_ciudades">
+        <PropertyRef Name="dep_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRAL_tb_pantalla_GRAL_tb_pantallaXrol_pant_id">
+    <End Role="tb_pantallas" Type="Self.tb_pantallas" Multiplicity="1" />
+    <End Role="tb_pantallasXroles" Type="Self.tb_pantallasXroles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_pantallas">
+        <PropertyRef Name="pant_id" />
+      </Principal>
+      <Dependent Role="tb_pantallasXroles">
+        <PropertyRef Name="pant_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRAL_tb_pantalla_GRAL_tb_pantallaXrol_rol_id">
+    <End Role="tb_roles" Type="Self.tb_roles" Multiplicity="1" />
+    <End Role="tb_pantallasXroles" Type="Self.tb_pantallasXroles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_roles">
+        <PropertyRef Name="rol_id" />
+      </Principal>
+      <Dependent Role="tb_pantallasXroles">
+        <PropertyRef Name="rol_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRAL_tb_roles_PERSON_tb_usuariosXroles_rol_id">
+    <End Role="tb_roles" Type="Self.tb_roles" Multiplicity="1" />
+    <End Role="tb_usuariosXroles" Type="Self.tb_usuariosXroles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_roles">
+        <PropertyRef Name="rol_id" />
+      </Principal>
+      <Dependent Role="tb_usuariosXroles">
+        <PropertyRef Name="rol_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRAL_tb_tramos_GRAL_tb_comunas_com_id">
+    <End Role="tb_tramos" Type="Self.tb_tramos" Multiplicity="0..1" />
+    <End Role="tb_comunas" Type="Self.tb_comunas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tramos">
+        <PropertyRef Name="tra_id" />
+      </Principal>
+      <Dependent Role="tb_comunas">
+        <PropertyRef Name="tra_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_empleados_PERSON_tb_empleadosXusuarios_emp_id">
+    <End Role="tb_empleados" Type="Self.tb_empleados" Multiplicity="1" />
+    <End Role="tb_empleadosXusuarios" Type="Self.tb_empleadosXusuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_empleados">
+        <PropertyRef Name="emp_id" />
+      </Principal>
+      <Dependent Role="tb_empleadosXusuarios">
+        <PropertyRef Name="emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_empleados_PERSON_tb_usuarios_usu_id">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="1" />
+    <End Role="tb_empleadosXusuarios" Type="Self.tb_empleadosXusuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_empleadosXusuarios">
+        <PropertyRef Name="usu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_carreteras_car_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_carreteras" Type="Self.tb_carreteras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_carreteras">
+        <PropertyRef Name="car_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_carreteras_car_usuario_modifica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_carreteras" Type="Self.tb_carreteras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_carreteras">
+        <PropertyRef Name="car_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_carreterasXciudades_cc_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_carreterasXciudades" Type="Self.tb_carreterasXciudades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_carreterasXciudades">
+        <PropertyRef Name="cc_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_carreterasXciudades_cc_usuario_modifica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_carreterasXciudades" Type="Self.tb_carreterasXciudades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_carreterasXciudades">
+        <PropertyRef Name="cc_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_ciudades_ciu_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_ciudades" Type="Self.tb_ciudades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_ciudades">
+        <PropertyRef Name="ciu_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_ciudades_ciu_usuario_modifica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_ciudades" Type="Self.tb_ciudades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_ciudades">
+        <PropertyRef Name="ciu_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_comunas_com_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_comunas" Type="Self.tb_comunas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_comunas">
+        <PropertyRef Name="com_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_comunas_com_usuario_modifica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_comunas" Type="Self.tb_comunas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_comunas">
+        <PropertyRef Name="com_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_departamentos_dep_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_departamentos" Type="Self.tb_departamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_departamentos">
+        <PropertyRef Name="dep_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_departamentos_dep_usuario_modifica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_departamentos" Type="Self.tb_departamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_departamentos">
+        <PropertyRef Name="dep_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_pantallas_pant_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_pantallas" Type="Self.tb_pantallas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_pantallas">
+        <PropertyRef Name="pant_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_pantallas_pant_usuario_modifica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_pantallas" Type="Self.tb_pantallas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_pantallas">
+        <PropertyRef Name="pant_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_roles_rol_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_roles" Type="Self.tb_roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_roles">
+        <PropertyRef Name="rol_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_roles_rol_usuario_modifica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_roles" Type="Self.tb_roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_roles">
+        <PropertyRef Name="rol_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_tramos_tra_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_tramos" Type="Self.tb_tramos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_tramos">
+        <PropertyRef Name="tra_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_GRAL_tb_tramos_tra_usuario_modifica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_tramos" Type="Self.tb_tramos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_tramos">
+        <PropertyRef Name="tra_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_INV_tb_categorias_cat_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_categorias" Type="Self.tb_categorias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_categorias">
+        <PropertyRef Name="cat_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_INV_tb_categorias_cat_usuario_modufica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_categorias" Type="Self.tb_categorias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_categorias">
+        <PropertyRef Name="cat_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_PERSON_tb_empleados_emp_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_empleados" Type="Self.tb_empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_empleados">
+        <PropertyRef Name="emp_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_PERSON_tb_empleados_emp_usuario_modifica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_empleados" Type="Self.tb_empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_empleados">
+        <PropertyRef Name="emp_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_PERSON_tb_empleadosXusuarios_emusu_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_empleadosXusuarios" Type="Self.tb_empleadosXusuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_empleadosXusuarios">
+        <PropertyRef Name="emusu_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_PERSON_tb_empleadosXusuarios_emusu_usuario_modifica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_empleadosXusuarios" Type="Self.tb_empleadosXusuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_empleadosXusuarios">
+        <PropertyRef Name="emusu_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_PERSON_tb_usuarios_usu_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_usuarios1" Type="Self.tb_usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_usuarios1">
+        <PropertyRef Name="usu_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_PERSON_tb_usuarios_usu_usuario_modifica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_usuarios1" Type="Self.tb_usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_usuarios1">
+        <PropertyRef Name="usu_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_PERSON_tb_usuariosXroles_usu_id">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="1" />
+    <End Role="tb_usuariosXroles" Type="Self.tb_usuariosXroles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_usuariosXroles">
+        <PropertyRef Name="usu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_PERSON_tb_usuariosXroles_usurol_usuario_crea">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_usuariosXroles" Type="Self.tb_usuariosXroles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_usuariosXroles">
+        <PropertyRef Name="usurol_usuario_crea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_tb_usuarios_PERSON_tb_usuariosXroles_usurol_usuario_modifica">
+    <End Role="tb_usuarios" Type="Self.tb_usuarios" Multiplicity="0..1" />
+    <End Role="tb_usuariosXroles" Type="Self.tb_usuariosXroles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuarios">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="tb_usuariosXroles">
+        <PropertyRef Name="usurol_usuario_modifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BD_CARRETERASModelStoreContainer">
+    <EntitySet Name="tb_carreteras" EntityType="Self.tb_carreteras" Schema="GRAL" store:Type="Tables" />
+    <EntitySet Name="tb_carreterasXciudades" EntityType="Self.tb_carreterasXciudades" Schema="GRAL" store:Type="Tables" />
+    <EntitySet Name="tb_ciudades" EntityType="Self.tb_ciudades" Schema="GRAL" store:Type="Tables" />
+    <EntitySet Name="tb_comunas" EntityType="Self.tb_comunas" Schema="GRAL" store:Type="Tables" />
+    <EntitySet Name="tb_departamentos" EntityType="Self.tb_departamentos" Schema="GRAL" store:Type="Tables" />
+    <EntitySet Name="tb_pantallas" EntityType="Self.tb_pantallas" Schema="GRAL" store:Type="Tables" />
+    <EntitySet Name="tb_pantallasXroles" EntityType="Self.tb_pantallasXroles" Schema="GRAL" store:Type="Tables" />
+    <EntitySet Name="tb_roles" EntityType="Self.tb_roles" Schema="GRAL" store:Type="Tables" />
+    <EntitySet Name="tb_tramos" EntityType="Self.tb_tramos" Schema="GRAL" store:Type="Tables" />
+    <EntitySet Name="tb_categorias" EntityType="Self.tb_categorias" Schema="INV" store:Type="Tables" />
+    <EntitySet Name="tb_empleados" EntityType="Self.tb_empleados" Schema="PERSON" store:Type="Tables" />
+    <EntitySet Name="tb_empleadosXusuarios" EntityType="Self.tb_empleadosXusuarios" Schema="PERSON" store:Type="Tables" />
+    <EntitySet Name="tb_usuarios" EntityType="Self.tb_usuarios" Schema="PERSON" store:Type="Tables" />
+    <EntitySet Name="tb_usuariosXroles" EntityType="Self.tb_usuariosXroles" Schema="PERSON" store:Type="Tables" />
+    <AssociationSet Name="FK_GRAL_tb_carreteras_GRAL_tb_carreterasXciudades_car_id" Association="Self.FK_GRAL_tb_carreteras_GRAL_tb_carreterasXciudades_car_id">
+      <End Role="tb_carreteras" EntitySet="tb_carreteras" />
+      <End Role="tb_carreterasXciudades" EntitySet="tb_carreterasXciudades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRAL_tb_carreteras_GRAL_tb_tramos_car_id" Association="Self.FK_GRAL_tb_carreteras_GRAL_tb_tramos_car_id">
+      <End Role="tb_carreteras" EntitySet="tb_carreteras" />
+      <End Role="tb_tramos" EntitySet="tb_tramos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRAL_tb_categorias_GRAL_tb_carreteras_car_id" Association="Self.FK_GRAL_tb_categorias_GRAL_tb_carreteras_car_id">
+      <End Role="tb_categorias" EntitySet="tb_categorias" />
+      <End Role="tb_carreteras" EntitySet="tb_carreteras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRAL_tb_ciudad_PERSON_tb_empleados_ciu_id" Association="Self.FK_GRAL_tb_ciudad_PERSON_tb_empleados_ciu_id">
+      <End Role="tb_ciudades" EntitySet="tb_ciudades" />
+      <End Role="tb_empleados" EntitySet="tb_empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRAL_tb_ciudades_GRAL_tb_carreteras_ciu_id" Association="Self.FK_GRAL_tb_ciudades_GRAL_tb_carreteras_ciu_id">
+      <End Role="tb_ciudades" EntitySet="tb_ciudades" />
+      <End Role="tb_carreteras" EntitySet="tb_carreteras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRAL_tb_ciudades_GRAL_tb_ciudades_ciu_id" Association="Self.FK_GRAL_tb_ciudades_GRAL_tb_ciudades_ciu_id">
+      <End Role="tb_ciudades" EntitySet="tb_ciudades" />
+      <End Role="tb_carreterasXciudades" EntitySet="tb_carreterasXciudades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRAL_tb_departamentos_GRAL_tb_ciudades_dep_id" Association="Self.FK_GRAL_tb_departamentos_GRAL_tb_ciudades_dep_id">
+      <End Role="tb_departamentos" EntitySet="tb_departamentos" />
+      <End Role="tb_ciudades" EntitySet="tb_ciudades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRAL_tb_pantalla_GRAL_tb_pantallaXrol_pant_id" Association="Self.FK_GRAL_tb_pantalla_GRAL_tb_pantallaXrol_pant_id">
+      <End Role="tb_pantallas" EntitySet="tb_pantallas" />
+      <End Role="tb_pantallasXroles" EntitySet="tb_pantallasXroles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRAL_tb_pantalla_GRAL_tb_pantallaXrol_rol_id" Association="Self.FK_GRAL_tb_pantalla_GRAL_tb_pantallaXrol_rol_id">
+      <End Role="tb_roles" EntitySet="tb_roles" />
+      <End Role="tb_pantallasXroles" EntitySet="tb_pantallasXroles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRAL_tb_roles_PERSON_tb_usuariosXroles_rol_id" Association="Self.FK_GRAL_tb_roles_PERSON_tb_usuariosXroles_rol_id">
+      <End Role="tb_roles" EntitySet="tb_roles" />
+      <End Role="tb_usuariosXroles" EntitySet="tb_usuariosXroles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRAL_tb_tramos_GRAL_tb_comunas_com_id" Association="Self.FK_GRAL_tb_tramos_GRAL_tb_comunas_com_id">
+      <End Role="tb_tramos" EntitySet="tb_tramos" />
+      <End Role="tb_comunas" EntitySet="tb_comunas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_empleados_PERSON_tb_empleadosXusuarios_emp_id" Association="Self.FK_PERSON_tb_empleados_PERSON_tb_empleadosXusuarios_emp_id">
+      <End Role="tb_empleados" EntitySet="tb_empleados" />
+      <End Role="tb_empleadosXusuarios" EntitySet="tb_empleadosXusuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_empleados_PERSON_tb_usuarios_usu_id" Association="Self.FK_PERSON_tb_empleados_PERSON_tb_usuarios_usu_id">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_empleadosXusuarios" EntitySet="tb_empleadosXusuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_carreteras_car_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_carreteras_car_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_carreteras" EntitySet="tb_carreteras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_carreteras_car_usuario_modifica" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_carreteras_car_usuario_modifica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_carreteras" EntitySet="tb_carreteras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_carreterasXciudades_cc_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_carreterasXciudades_cc_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_carreterasXciudades" EntitySet="tb_carreterasXciudades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_carreterasXciudades_cc_usuario_modifica" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_carreterasXciudades_cc_usuario_modifica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_carreterasXciudades" EntitySet="tb_carreterasXciudades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_ciudades_ciu_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_ciudades_ciu_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_ciudades" EntitySet="tb_ciudades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_ciudades_ciu_usuario_modifica" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_ciudades_ciu_usuario_modifica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_ciudades" EntitySet="tb_ciudades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_comunas_com_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_comunas_com_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_comunas" EntitySet="tb_comunas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_comunas_com_usuario_modifica" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_comunas_com_usuario_modifica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_comunas" EntitySet="tb_comunas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_departamentos_dep_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_departamentos_dep_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_departamentos" EntitySet="tb_departamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_departamentos_dep_usuario_modifica" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_departamentos_dep_usuario_modifica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_departamentos" EntitySet="tb_departamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_pantallas_pant_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_pantallas_pant_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_pantallas" EntitySet="tb_pantallas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_pantallas_pant_usuario_modifica" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_pantallas_pant_usuario_modifica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_pantallas" EntitySet="tb_pantallas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_roles_rol_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_roles_rol_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_roles" EntitySet="tb_roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_roles_rol_usuario_modifica" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_roles_rol_usuario_modifica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_roles" EntitySet="tb_roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_tramos_tra_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_tramos_tra_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_tramos" EntitySet="tb_tramos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_GRAL_tb_tramos_tra_usuario_modifica" Association="Self.FK_PERSON_tb_usuarios_GRAL_tb_tramos_tra_usuario_modifica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_tramos" EntitySet="tb_tramos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_INV_tb_categorias_cat_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_INV_tb_categorias_cat_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_categorias" EntitySet="tb_categorias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_INV_tb_categorias_cat_usuario_modufica" Association="Self.FK_PERSON_tb_usuarios_INV_tb_categorias_cat_usuario_modufica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_categorias" EntitySet="tb_categorias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_PERSON_tb_empleados_emp_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_PERSON_tb_empleados_emp_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_empleados" EntitySet="tb_empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_PERSON_tb_empleados_emp_usuario_modifica" Association="Self.FK_PERSON_tb_usuarios_PERSON_tb_empleados_emp_usuario_modifica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_empleados" EntitySet="tb_empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_PERSON_tb_empleadosXusuarios_emusu_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_PERSON_tb_empleadosXusuarios_emusu_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_empleadosXusuarios" EntitySet="tb_empleadosXusuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_PERSON_tb_empleadosXusuarios_emusu_usuario_modifica" Association="Self.FK_PERSON_tb_usuarios_PERSON_tb_empleadosXusuarios_emusu_usuario_modifica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_empleadosXusuarios" EntitySet="tb_empleadosXusuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_PERSON_tb_usuarios_usu_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_PERSON_tb_usuarios_usu_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_usuarios1" EntitySet="tb_usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_PERSON_tb_usuarios_usu_usuario_modifica" Association="Self.FK_PERSON_tb_usuarios_PERSON_tb_usuarios_usu_usuario_modifica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_usuarios1" EntitySet="tb_usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_PERSON_tb_usuariosXroles_usu_id" Association="Self.FK_PERSON_tb_usuarios_PERSON_tb_usuariosXroles_usu_id">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_usuariosXroles" EntitySet="tb_usuariosXroles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_PERSON_tb_usuariosXroles_usurol_usuario_crea" Association="Self.FK_PERSON_tb_usuarios_PERSON_tb_usuariosXroles_usurol_usuario_crea">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_usuariosXroles" EntitySet="tb_usuariosXroles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_tb_usuarios_PERSON_tb_usuariosXroles_usurol_usuario_modifica" Association="Self.FK_PERSON_tb_usuarios_PERSON_tb_usuariosXroles_usurol_usuario_modifica">
+      <End Role="tb_usuarios" EntitySet="tb_usuarios" />
+      <End Role="tb_usuariosXroles" EntitySet="tb_usuariosXroles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
