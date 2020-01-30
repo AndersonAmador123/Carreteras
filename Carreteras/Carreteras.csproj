@@ -1809,21 +1809,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\tb_ciudades\Create.cshtml" />
-    <Content Include="Views\tb_ciudades\Delete.cshtml" />
-    <Content Include="Views\tb_ciudades\Details.cshtml" />
-    <Content Include="Views\tb_ciudades\Edit.cshtml" />
-    <Content Include="Views\tb_ciudades\Index.cshtml" />
     <Content Include="Views\Roles\Create.cshtml" />
     <Content Include="Views\Roles\Delete.cshtml" />
     <Content Include="Views\Roles\Details.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
-    <Content Include="Views\Tramos\Create.cshtml" />
-    <Content Include="Views\Tramos\Delete.cshtml" />
-    <Content Include="Views\Tramos\Details.cshtml" />
-    <Content Include="Views\Tramos\Edit.cshtml" />
-    <Content Include="Views\Tramos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
