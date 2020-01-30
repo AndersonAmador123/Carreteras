@@ -1,0 +1,81 @@
+﻿@model Carreteras.tb_ciudades
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tb_ciudades</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ciu_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciu_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ciu_fecha_crea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciu_fecha_crea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ciu_fecha_modifica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciu_fecha_modifica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ciu_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciu_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_departamentos.dep_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_departamentos.dep_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_usuarios.usu_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_usuarios.usu_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_usuarios1.usu_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_usuarios1.usu_descripcion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

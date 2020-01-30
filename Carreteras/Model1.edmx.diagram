@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4848ef4533bd4591930bba2290f0fa5c" Name="Diagram1" ZoomLevel="29">
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_carreteras" Width="1.5" PointX="7.5" PointY="16" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_carreterasXciudades" Width="1.5" PointX="9.75" PointY="14.375" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_ciudades" Width="1.5" PointX="5.25" PointY="12.375" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_comunas" Width="1.5" PointX="15" PointY="13.875" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_departamentos" Width="1.5" PointX="3" PointY="8.625" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_pantallas" Width="1.5" PointX="3" PointY="25.625" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_pantallasXroles" Width="1.5" PointX="5.25" PointY="27.75" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_roles" Width="1.5" PointX="3" PointY="29.375" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_tramos" Width="1.5" PointX="12.75" PointY="14.125" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_categorias" Width="1.5" PointX="3" PointY="22" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_empleados" Width="1.5" PointX="7.5" PointY="10.875" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_empleadosXusuarios" Width="1.5" PointX="9.75" PointY="9.875" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_usuarios" Width="1.5" PointX="0.75" PointY="11.5" />
+        <EntityTypeShape EntityType="carreteras_finalModel.tb_usuariosXroles" Width="1.5" PointX="5.25" PointY="20.5" />
+        <AssociationConnector Association="carreteras_finalModel.FK_GRAL_tb_carreteras_GRAL_tb_carreterasXciudades_car_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_GRAL_tb_carreteras_GRAL_tb_tramos_car_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_GRAL_tb_categorias_GRAL_tb_carreteras_car_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_GRAL_tb_ciudades_GRAL_tb_carreteras_ciu_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_carreteras_car_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_carreteras_car_usuario_modifica" />
+        <AssociationConnector Association="carreteras_finalModel.FK_GRAL_tb_ciudades_GRAL_tb_ciudades_ciu_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_carreterasXciudades_cc_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_carreterasXciudades_cc_usuario_modifica" />
+        <AssociationConnector Association="carreteras_finalModel.FK_GRAL_tb_ciudad_PERSON_tb_empleados_ciu_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_GRAL_tb_departamentos_GRAL_tb_ciudades_dep_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_ciudades_ciu_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_ciudades_ciu_usuario_modifica" />
+        <AssociationConnector Association="carreteras_finalModel.FK_GRAL_tb_tramos_GRAL_tb_comunas_com_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_comunas_com_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_comunas_com_usuario_modifica" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_departamentos_dep_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_departamentos_dep_usuario_modifica" />
+        <AssociationConnector Association="carreteras_finalModel.FK_GRAL_tb_pantalla_GRAL_tb_pantallaXrol_pant_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_pantallas_pant_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_pantallas_pant_usuario_modifica" />
+        <AssociationConnector Association="carreteras_finalModel.FK_GRAL_tb_pantalla_GRAL_tb_pantallaXrol_rol_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_GRAL_tb_roles_PERSON_tb_usuariosXroles_rol_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_roles_rol_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_roles_rol_usuario_modifica" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_tramos_tra_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_GRAL_tb_tramos_tra_usuario_modifica" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_INV_tb_categorias_cat_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_INV_tb_categorias_cat_usuario_modufica" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_empleados_PERSON_tb_empleadosXusuarios_emp_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_PERSON_tb_empleados_emp_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_PERSON_tb_empleados_emp_usuario_modifica" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_empleados_PERSON_tb_usuarios_usu_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_PERSON_tb_empleadosXusuarios_emusu_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_PERSON_tb_empleadosXusuarios_emusu_usuario_modifica" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_PERSON_tb_usuarios_usu_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_PERSON_tb_usuarios_usu_usuario_modifica" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_PERSON_tb_usuariosXroles_usu_id" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_PERSON_tb_usuariosXroles_usurol_usuario_crea" />
+        <AssociationConnector Association="carreteras_finalModel.FK_PERSON_tb_usuarios_PERSON_tb_usuariosXroles_usurol_usuario_modifica" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

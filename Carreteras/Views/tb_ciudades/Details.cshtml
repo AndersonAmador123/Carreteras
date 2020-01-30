@@ -1,0 +1,75 @@
+﻿@model Carreteras.tb_ciudades
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_ciudades</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ciu_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciu_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ciu_fecha_crea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciu_fecha_crea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ciu_fecha_modifica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciu_fecha_modifica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ciu_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciu_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_departamentos.dep_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_departamentos.dep_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_usuarios.usu_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_usuarios.usu_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_usuarios1.usu_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_usuarios1.usu_descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ciu_id }, new { @class = "btn btn-success  " }) |
+    @Html.ActionLink("Cancelar", "Index",null,new { @class = " btn btn-default" })
+</p>
