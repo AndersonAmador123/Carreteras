@@ -1,0 +1,214 @@
+﻿@model Carreteras.Models.tb_carreteras
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>tb_carreteras</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.car_id)
+        <div class="row">
+
+            <div class="col-lg-6">
+
+                <div class="form-group">
+                    <div class="col-md-2">
+                        <label> Descripción </label>
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.car_descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.car_descripcion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-2">
+                        <label> Km Inicio </label>
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.car_km_inicio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.car_km_inicio, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-2">
+                        <label> Categoria </label>
+                    </div>
+                    <div class="col-md-10">
+                        @Html.DropDownList("cat_id", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.cat_id, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="col-lg-6">
+
+                <div class="form-group">
+                    <div class="col-md-2">
+                        <label> Ciudad </label>
+                    </div>
+                    <div class="col-md-10">
+                        @Html.DropDownList("ciu_id", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ciu_id, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-2">
+                        <label> Km Final </label>
+                    </div>
+
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.car_km_fin, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.car_km_fin, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <div class="col-md-2">
+                        <label> Intercepta </label>
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.car_finC, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.car_finC, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+               
+}
+<br />
+
+
+<div class="ibox-content">
+
+    <div class="form-horizontal">
+
+
+        <div class="row">
+
+            <div class="col-lg-4">
+
+                <div class="form-group">
+                    <div class="col-md-2">
+                        <label> Tramo </label>
+                    </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.car_descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.car_descripcion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <label> Km Incia </label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.car_descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.car_descripcion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <label>Km Final</label>
+                    </div>
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.car_descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.car_descripcion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+<br />
+<div class="form-group">
+    <div class="col-md-offset-11 col-md-10">
+        <input type="submit" value="Agregar" class="btn btn-success toolbar-item " />
+
+    </div>
+</div>
+<br />
+<table class="table table-striped table-bordered table-hover   dtr-inline" id="tbl" aria-describedby="tabla_evento_info" role="grid">
+    <thead>
+        <tr>
+
+            <th>
+                Descripcion
+            </th>
+
+            <th>
+                km inicio
+            </th>
+
+            <th>
+                km final
+            </th>
+
+
+
+
+            <th>Accion</th>
+        </tr>
+    </thead>
+
+
+    <tr>
+        <td>
+            sa
+        </td>
+        <td>
+            12
+        </td>
+        <td>
+            134
+        </td>
+
+
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = 1 }, new { @class = "btn btn-success  btn-xs" }) |
+            @Html.ActionLink("Cancelar", "Delete", new { id = 1 }, new { @class = "btn btn-danger btn-xs" })
+        </td>
+    </tr>
+
+
+</table>
+
+
+<div class="form-group">
+    <div class="col-md-offset-10 col-md-10">
+        <input type="submit" value="Guardar" class="btn btn-success toolbar-item " />
+        @Html.ActionLink("Cancelar", "Index", null, new { @class = " btn btn-default" })
+    </div>
+</div>

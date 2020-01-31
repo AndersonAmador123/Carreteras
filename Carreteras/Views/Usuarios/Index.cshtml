@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Carreteras.Models.tb_usuarios>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="container">
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-offset-5">
+
+                <h1> Usuarios </h1>
+            </div>
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Nuevo", "Create", null, new { @class = "btn btn-success toolbar-item" })
+    </p>
+
+
+
+
+
+    <div class="table-responsive">
+
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+
+            <table class="table table-striped table-bordered table-hover dataTables-example dataTable dtr-inline" id="tbl" aria-describedby="tabla_evento_info" role="grid">
+                <thead>
+                    <tr>
+
+                        <th>
+                            Descripción
+                        </th>
+
+                        <th>
+                            Contraseña
+                        </th>
+
+
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.usu_descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.usu_password)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.usu_id }, new { @class = "btn btn-success  btn-xs" }) |
+                            @Html.ActionLink("Detalle", "Details", new { id = item.usu_id }, new { @class = "btn btn-default btn-xs" }) |
+                            @Html.ActionLink("Inactivar", "Delete", new { id = item.usu_id }, new { @class = "btn btn-danger btn-xs" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+
+
+        </div>
+    </div>
+</div>

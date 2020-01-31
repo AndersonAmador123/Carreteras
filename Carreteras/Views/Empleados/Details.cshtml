@@ -1,0 +1,91 @@
+﻿@model Carreteras.Models.tb_empleados
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_empleados</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_edad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_fecha_crea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_fecha_crea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_fecha_modifica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_fecha_modifica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_ciudades.ciu_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_ciudades.ciu_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_usuarios.usu_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_usuarios.usu_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_usuarios1.usu_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_usuarios1.usu_descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.emp_id }, new { @class = "btn btn-success  " }) |
+    @Html.ActionLink("Cancelar", "Index",null,new { @class = " btn btn-default" })
+</p>
