@@ -1187,6 +1187,7 @@
     <Content Include="Content\img\flags\64\Yemen.png" />
     <Content Include="Content\img\flags\64\Zambia.png" />
     <Content Include="Content\img\flags\64\Zimbabwe.png" />
+    <Content Include="Content\img\fondo.jpg" />
     <Content Include="Content\img\full_height.jpg" />
     <Content Include="Content\img\gallery\1.jpg" />
     <Content Include="Content\img\gallery\10.jpg" />
