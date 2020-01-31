@@ -8,7 +8,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>tb_tramos</h4>
+    <h2>Tramos</h2>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -35,21 +35,21 @@
             @Html.DisplayFor(model => model.tra_km_fin)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tra_fecha_crea)
-        </dt>
+        @*<dt>
+                @Html.DisplayNameFor(model => model.tra_fecha_crea)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.tra_fecha_crea)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.tra_fecha_crea)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tra_fecha_modifica)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.tra_fecha_modifica)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.tra_fecha_modifica)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.tra_fecha_modifica)
+            </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.tra_estado)
@@ -67,25 +67,92 @@
             @Html.DisplayFor(model => model.tb_carreteras.car_descripcion)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_usuarios.usu_descripcion)
-        </dt>
+        @*<dt>
+                @Html.DisplayNameFor(model => model.tb_usuarios.usu_descripcion)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.tb_usuarios.usu_descripcion)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.tb_usuarios.usu_descripcion)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_usuarios1.usu_descripcion)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.tb_usuarios1.usu_descripcion)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.tb_usuarios1.usu_descripcion)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.tb_usuarios1.usu_descripcion)
+            </dd>*@
 
     </dl>
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.tra_usuario_crea) </th>
+                <th>  @Html.DisplayNameFor(model => model.tra_fecha_crea)</th>
+                <th> @Html.DisplayNameFor(model => model.tra_usuario_modifica)</th>
+                <th>  @Html.DisplayNameFor(model => model.tra_fecha_modifica)</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>  @Html.DisplayFor(model => model.tra_usuario_crea) </td>
+                <td>@Html.DisplayFor(model => model.tra_fecha_crea) </td>
+                <td> @Html.DisplayFor(model => model.tra_usuario_modifica)</td>
+                <td> @Html.DisplayFor(model => model.tra_fecha_modifica)</td>
+
+            </tr>
+        </tbody>
+    </table>
 </div>
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false" href="#">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Editar Registro</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+
+                        <article><input type="text" class="form-control" id="formGroupExampleInput" placeholder="Codigo Tramo"></article>
+                    </div>
+                    <br> <br>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Descripcion Tramo">
+                    </div>
+                    <br> <br>
+                    <div class="form-group">
+                        <div class="dropdown">
+                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                                Estado
+                            </button>
+                            <div class="dropdown-menu">
+                                <h4><a class="dropdown-item" href="#">Activo</a></h4>
+                                <br />
+                                <h4><a class="dropdown-item" href="#">Inactivo</a></h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success toolbar-item" data-dismiss="modal">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.tra_id }, new { @class = "btn btn-success  " }) |
-    @Html.ActionLink("Cancelar", "Index",null,new { @class = " btn btn-default" })
+
+    <button type="button" class="btn btn-success  " data-toggle="modal" data-target="#exampleModal2">
+        Editar
+    </button>
+    @*@Html.ActionLink("Editar", "Edit", new { id = Model.tra_id }, new { @class = "btn btn-success  " }) |*@
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = " btn btn-default" })
 </p>

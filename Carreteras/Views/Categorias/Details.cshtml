@@ -1,0 +1,67 @@
+﻿@model Carreteras.Models.tb_categorias
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_categorias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_fecha_crea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat_fecha_crea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_fecha_modifica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat_fecha_modifica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_usuarios.usu_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_usuarios.usu_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_usuarios1.usu_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_usuarios1.usu_descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.cat_id }, new { @class = "btn btn-success  " }) |
+    @Html.ActionLink("Cancelar", "Index",null,new { @class = " btn btn-default" })
+</p>

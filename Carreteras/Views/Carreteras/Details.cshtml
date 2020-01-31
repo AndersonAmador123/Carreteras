@@ -1,0 +1,190 @@
+﻿@model Carreteras.Models.tb_carreteras
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalle Carretera</h2>
+
+<div>
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+
+            <div class="form-horizontal">
+
+
+                <div class="row">
+
+                    <div>
+                        <div class="col-lg-4">
+
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label> Descripción </label>
+                                </div>
+                                <div class="col-md-9">
+
+                                    @Html.DisplayFor(model => model.car_descripcion)
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>   Km Inicio </label>
+                                </div>
+                                <div class="col-md-9">
+
+                                    @Html.DisplayFor(model => model.car_km_inicio)
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label> Categoria </label>
+                            </div>
+                            <div class="col-md-9">
+
+                                @Html.DisplayFor(model => model.tb_categorias.cat_descripcion)
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label>   Km Final </label>
+                            </div>
+                            <div class="col-md-9">
+
+                                @Html.DisplayFor(model => model.car_km_fin)
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label> Ciudad </label>
+                            </div>
+                            <div class="col-md-9">
+
+                                @Html.DisplayFor(model => model.tb_ciudades.ciu_descripcion)
+
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <h3>Tramos</h3>
+            <table class="table table-striped table-bordered table-hover   dtr-inline" id="tbl" aria-describedby="tabla_evento_info" role="grid">
+                <thead>
+                    <tr>
+
+                        <th>
+                            Descripcion
+                        </th>
+
+                        <th>
+                            km inicio
+                        </th>
+
+                        <th>
+                            km final
+                        </th>
+
+                    </tr>
+                </thead>
+
+
+                <tr>
+                    <td>
+                        sa
+                    </td>
+                    <td>
+                        12
+                    </td>
+                    <td>
+                        134
+                    </td>
+
+                </tr>
+            </table>
+
+            <div class="form-group">
+                <div class="col-md-offset-10 col-md-10">
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.car_id }, new { @class = "btn btn-success  " }) |
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = " btn btn-default" })
+                </div>
+            </div>
+            <br />
+            <h3>Auditoria</h3>
+            <table class="table table-striped table-bordered table-hover   dtr-inline" id="tbl" aria-describedby="tabla_evento_info" role="grid">
+                <thead>
+                    <tr>
+
+                        <th>
+                            Accion
+                        </th>
+
+                        <th>
+                            Usuario
+                        </th>
+
+                        <th>
+                            Fecha
+                        </th>
+
+                    </tr>
+                </thead>
+
+
+                <tr>
+                    <td>
+                        Crea
+                    </td>
+                    <td>
+                        Giezi
+                    </td>
+                    <td>
+                        12/12/29020
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        Modifica
+                    </td>
+                    <td>
+                        Jose
+                    </td>
+                    <td>
+                        11/11/2020
+                    </td>
+
+                </tr>
+            </table>
+        </dl>
+    </div>
+</div>
