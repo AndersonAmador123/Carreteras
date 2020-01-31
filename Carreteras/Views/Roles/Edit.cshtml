@@ -5,72 +5,102 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>tb_roles</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.rol_id)
+    <div class="ibox-content">
+        <div class="container">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-offset-5">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.rol_descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.rol_descripcion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.rol_descripcion, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <h1>Editar Rol</h1>
+                    </div>
+                </div>
+                <br />
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.rol_usuario_crea, "rol_usuario_crea", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("rol_usuario_crea", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.rol_usuario_crea, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <div class="row">
+                    <div class="form-group">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.rol_fecha_crea, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.rol_fecha_crea, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.rol_fecha_crea, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.rol_usuario_modifica, "rol_usuario_modifica", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("rol_usuario_modifica", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.rol_usuario_modifica, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="col-md-1">
+                            @Html.LabelFor(model => model.rol_id, htmlAttributes: new { @class = "control-label col-md-2" })
+                        </div>
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.rol_id, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.rol_id, "", new { @class = "text-danger" })
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.rol_fecha_modifica, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.rol_fecha_modifica, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.rol_fecha_modifica, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.rol_estado, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.rol_estado)
-                    @Html.ValidationMessageFor(model => model.rol_estado, "", new { @class = "text-danger" })
+
+
+                        <div class="col-md-offset-3">
+                            @Html.LabelFor(model => model.rol_descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+                        </div>
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.rol_descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.rol_descripcion, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
+
+            <fieldset>
+                <div class="col-md-offset-4">
+                    <div class="col-md-5">
+
+                        <legend>Pantallas</legend>
+                        <div class="col-md-offset-5">
+                            <input id="checkbox1" type="checkbox">
+                            <label for="checkbox1">
+                                Carretera
+                            </label>
+                        </div>
+
+                        <div class="col-md-offset-5">
+                            <input id="checkbox1" type="checkbox">
+                            <label for="checkbox1">
+                                Tramo
+                            </label>
+                        </div>
+
+                        <div class="col-md-offset-5">
+                            <input id="checkbox1" type="checkbox">
+                            <label for="checkbox1">
+                                Cómuna
+                            </label>
+                        </div>
+
+                        <div class="col-md-offset-5">
+                            <input id="checkbox1" type="checkbox">
+                            <label for="checkbox1">
+                                Departamento
+                            </label>
+                        </div>
+
+                        <div class="col-md-offset-5">
+                            <input id="checkbox1" type="checkbox">
+                            <label for="checkbox1">
+                                Ciudad
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+            </fieldset>
+
         </div>
 
+
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Guardar" class="btn btn-success toolbar-item " />
-				 @Html.ActionLink("Cancelar", "Index",null,new { @class = " btn btn-default" })
+            <div class="col-md-offset-10 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-success  " />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = " btn btn-default" })
             </div>
         </div>
     </div>

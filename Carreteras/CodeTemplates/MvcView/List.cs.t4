@@ -22,7 +22,7 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 #>
 }
 
-<h2><#= ViewName#></h2>
+
 
 <#
 } else {
@@ -41,9 +41,19 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 </head>
 <body>
 <#
-    PushIndent("    ");
+    
 }
 #>
+
+<div class="container">
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-offset-5">
+
+                <h1> -- tema -- </h1>
+            </div>
+        </div>
+    </div>
 <p>
 	 @Html.ActionLink("Nuevo", "Create",null,new { @class = "btn btn-success toolbar-item" })
 </p>
@@ -51,7 +61,7 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 
 
 
- <div class="ibox-content">
+
     <div class="table-responsive">
 
         <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
@@ -130,7 +140,8 @@ if (pkName != null) {
 
  </div>
  </div>
- </div>
+  </div>
+
 
 
 
