@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Carreteras.Models.tb_departamentos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="container">
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-offset-5">
+
+                <h1> Departamentos </h1>
+            </div>
+        </div>
+    </div>
+<p>
+	 @Html.ActionLink("Nuevo", "Create",null,new { @class = "btn btn-success toolbar-item" })
+</p>
+
+
+
+
+
+    <div class="table-responsive">
+
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+   
+   <table class="table table-striped table-bordered table-hover dataTables-example dataTable dtr-inline" id="tbl" aria-describedby="tabla_evento_info" role="grid">
+    <thead>
+	<tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.dep_descripcion)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.dep_fecha_crea)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.dep_fecha_modifica)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.dep_estado)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.tb_usuarios.usu_descripcion)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.tb_usuarios1.usu_descripcion)
+        </th>
+        <th>Accion</th>
+    </tr>
+	</thead>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.dep_descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dep_fecha_crea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dep_fecha_modifica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dep_estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_usuarios.usu_descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_usuarios1.usu_descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.dep_id }, new { @class = "btn btn-success  btn-xs" }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.dep_id }, new { @class = "btn btn-default btn-xs" }) |
+            @Html.ActionLink("Inactivar", "Delete", new { id=item.dep_id }, new { @class = "btn btn-danger btn-xs" })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+
+ </div>
+ </div>
+  </div>
+
+
+
+
+
