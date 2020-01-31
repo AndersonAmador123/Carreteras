@@ -9,6 +9,11 @@ namespace Carreteras.Controllers
     public class PrincipalController : Controller
     {
         // GET: Principal
+        public ActionResult Login()
+        {
+            return View();
+        }
+
         public ActionResult Principal()
         {
             return View();
