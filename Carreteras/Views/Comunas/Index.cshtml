@@ -1,0 +1,271 @@
+﻿@model IEnumerable<Carreteras.Models.tb_comunas>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="container">
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-offset-5">
+
+                <h1> Comunas </h1>
+            </div>
+        </div>
+    </div>
+    @*<p>
+             @Html.ActionLink("Nuevo", "Create",null,new { @class = "btn btn-success toolbar-item" })
+        </p>*@
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+        Nuevo
+    </button>
+    <br />
+
+
+
+
+
+    <div class="table-responsive">
+
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+
+            <table class="table table-striped table-bordered table-hover dataTables-example dataTable dtr-inline" id="tbl" aria-describedby="tabla_evento_info" role="grid">
+                <thead>
+                    <tr>
+
+                        <th>
+                            Descripcion
+                        </th>
+
+                        <th>
+                            Km Inicial
+                        </th>
+
+                        <th>
+                            Km fin
+                        </th>
+                        <th>
+                            Tramo
+                        </th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.com_descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.com_km_inicio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.com_km_fin)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.tb_tramos.tra_descripcion)
+                        </td>
+                        <td>
+                            @*@Html.ActionLink("Editar", "Edit", new { id=item.com_id }, new { @class = "btn btn-success  btn-xs" }) |*@
+                            <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#EditarModal">
+                                Editar
+                            </button>
+                            @Html.ActionLink("Detalle", "Details", new { id = item.com_id }, new { @class = "btn btn-default btn-xs" }) |
+                            @Html.ActionLink("Inactivar", "Delete", new { id = item.com_id }, new { @class = "btn btn-danger btn-xs" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false" href="#">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <center><h4>Agregar Comuna</h4></center>
+                    <hr>
+
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>   Codigo </label>
+                        </div>
+                        <div class="col-md-9">
+                            <input class="form-control text-box single-line" id="com_id" name="com_id" type="text" value="">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="com_id" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>   Descripcion </label>
+                        </div>
+                        <div class="col-md-9">
+                            <input class="form-control text-box single-line" id="com_descripcion" name="com_descripcion" type="text" value="">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="com_descripcion" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>   Km Inicial </label>
+                        </div>
+                        <div class="col-md-9">
+                            <input class="form-control text-box single-line" id="com_km_inicio" name="com_km_inicio" type="text" value="">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="com_km_inicio" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>   Km Final </label>
+                        </div>
+                        <div class="col-md-9">
+                            <input class="form-control text-box single-line" id="com_km_fin" name="com_km_fin" type="text" value="">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="com_km_fin" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>   Tramo </label>
+                        </div>
+                        <div class="col-md-9">
+                            <select class="form-control" id="tra_id" name="tra_id"></select>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="tra_id" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-8 col-md-10">
+                            <input type="submit" value="Guardar" class="btn btn-success  ">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">Cancelar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false" href="#">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="wrapper wrapper-content">
+
+
+
+                    <center><h2>Editar comuna</h2></center>
+
+                    <form action="/Comunas/Edit/19" method="post">
+                        <input name="__RequestVerificationToken" type="hidden" value="8h6ZmEwdFRTaWwIIluc7HF1lQxTHBNjpdTB84opImhIgoQbjxoJXe0jiwdffwCDoA7qC4oIQ3mUFvWvPEExfilpAh3RlJOFWAHXIk-LF7Xk1">    <div class="form-horizontal">
+
+                            <hr>
+
+                            <input id="com_id" name="com_id" type="hidden" value="19">
+
+                            <div class="form-group">
+
+                                <div class="col-md-3">
+                                    <label>   Descripcion </label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control text-box single-line" id="com_descripcion" name="com_descripcion" type="text" value="Satelite">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="com_descripcion" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-3">
+                                    <label>    Km Inicial </label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control text-box single-line" id="com_km_inicio" name="com_km_inicio" type="text" value="12">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="com_km_inicio" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-3">
+                                    <label>   Km Final </label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="form-control text-box single-line" id="com_km_fin" name="com_km_fin" type="text" value="45">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="com_km_fin" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>   Tramo </label>
+                                </div>
+                                <div class="col-md-9">
+                                    <select class="form-control" id="tra_id" name="tra_id"></select>
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="tra_id" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-8 col-md-10">
+                                    <input type="submit" value="Guardar" class="btn btn-success toolbar-item ">
+
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">Cancelar</span>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div>
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

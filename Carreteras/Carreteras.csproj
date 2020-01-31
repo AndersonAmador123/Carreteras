@@ -200,6 +200,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CarreterasController.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\CiudadesController.cs" />
+    <Compile Include="Controllers\ComunasController.cs" />
     <Compile Include="Controllers\DepartamentosController.cs" />
     <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1865,6 +1867,16 @@
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\Principal\Login.cshtml" />
+    <Content Include="Views\Ciudades\Create.cshtml" />
+    <Content Include="Views\Ciudades\Delete.cshtml" />
+    <Content Include="Views\Ciudades\Details.cshtml" />
+    <Content Include="Views\Ciudades\Edit.cshtml" />
+    <Content Include="Views\Ciudades\Index.cshtml" />
+    <Content Include="Views\Comunas\Create.cshtml" />
+    <Content Include="Views\Comunas\Delete.cshtml" />
+    <Content Include="Views\Comunas\Details.cshtml" />
+    <Content Include="Views\Comunas\Edit.cshtml" />
+    <Content Include="Views\Comunas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

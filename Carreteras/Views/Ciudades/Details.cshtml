@@ -1,0 +1,114 @@
+﻿@model Carreteras.Models.tb_ciudades
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h1>Detalle</h1>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ciu_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciu_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_departamentos.dep_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_departamentos.dep_descripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ciu_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciu_estado)
+        </dd>
+
+    </dl>
+</div>
+
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Usuario Crea</th>
+            <th>Fecha Crea</th>
+            <th>Uusario Modifica</th>
+            <th>Fecha Modifica</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+
+<p>
+    @*@Html.ActionLink("Editar", "Edit", new { id = Model.ciu_id }, new { @class = "btn btn-success  " }) |*@
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#EditarModal">
+        Editar
+    </button>
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = " btn btn-default" })
+</p>
+
+
+<div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false" href="#">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <h4>tb_ciudades</h4>
+                    <hr>
+
+                    <input id="ciu_id" name="ciu_id" type="hidden" value="CIU-02">
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="ciu_descripcion">ciu_descripcion</label>
+                        <div class="col-md-10">
+                            <input class="form-control text-box single-line" id="ciu_descripcion" name="ciu_descripcion" type="text" value="choloma">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="ciu_descripcion" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="dep_id">dep_id</label>
+                        <div class="col-md-10">
+                            <select class="form-control" id="dep_id" name="dep_id">
+                                <option selected="selected" value="05"></option>
+                            </select>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="dep_id" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Guardar" class="btn btn-success toolbar-item ">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">Cancelar</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

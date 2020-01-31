@@ -34,6 +34,10 @@ namespace Carreteras.Controllers
             return View();
         }
 
+        public ActionResult ControladorComunas()
+        {
+            return RedirectToAction("Index", "Comunas");
+        }
         public ActionResult ControladorCarreteras()
         {
             return RedirectToAction("Index","Carreteras");
@@ -72,6 +76,11 @@ namespace Carreteras.Controllers
         public ActionResult ControladorUsuarios()
         {
             return RedirectToAction("Index", "Usuarios");
+        }
+
+        public ActionResult ControladorCiudades()
+        {
+            return RedirectToAction("Index", "Ciudades");
         }
     }
 }

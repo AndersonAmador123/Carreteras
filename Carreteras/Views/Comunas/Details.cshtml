@@ -1,0 +1,163 @@
+﻿@model Carreteras.Models.tb_comunas
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h1>Detalle Comunas</h1>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.com_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.com_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.com_km_inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.com_km_inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.com_km_fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.com_km_fin)
+        </dd>
+
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_tramos.tra_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_tramos.tra_descripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.com_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.com_estado)
+        </dd>
+
+
+    </dl>
+</div>
+
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Usuario Crea</th>
+            <th>Fecha Crea</th>
+            <th>Uusario Modifica</th>
+            <th>Fecha Modifica</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+
+@*@Html.ActionLink("Editar", "Edit", new { id = Model.com_id }, new { @class = "btn btn-success  " }) |*@
+
+<div class="col-md-offset-10 col-md-10">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#EditarModal">
+        Editar
+    </button>
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = " btn btn-default" })
+</div>
+
+
+<div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false" href="#">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="wrapper wrapper-content">
+
+                    <h2>Edit</h2>
+
+                    <form action="/Comunas/Edit/19" method="post">
+                        <input name="__RequestVerificationToken" type="hidden" value="8h6ZmEwdFRTaWwIIluc7HF1lQxTHBNjpdTB84opImhIgoQbjxoJXe0jiwdffwCDoA7qC4oIQ3mUFvWvPEExfilpAh3RlJOFWAHXIk-LF7Xk1">    <div class="form-horizontal">
+                            <h4>Comunas</h4>
+                            <hr>
+
+                            <input id="com_id" name="com_id" type="hidden" value="19">
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="com_descripcion">com_descripcion</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" id="com_descripcion" name="com_descripcion" type="text" value="Satelite">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="com_descripcion" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="com_km_inicio">com_km_inicio</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" id="com_km_inicio" name="com_km_inicio" type="text" value="12">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="com_km_inicio" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="com_km_fin">com_km_fin</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" id="com_km_fin" name="com_km_fin" type="text" value="45">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="com_km_fin" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="tra_id">tra_id</label>
+                                <div class="col-md-10">
+                                    <select class="form-control" id="tra_id" name="tra_id"></select>
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="tra_id" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-8 col-md-10">
+                                    <input type="submit" value="Guardar" class="btn btn-success toolbar-item ">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">Cancelar</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

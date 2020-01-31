@@ -1,0 +1,191 @@
+﻿@model IEnumerable<Carreteras.Models.tb_ciudades>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="container">
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-offset-5">
+
+                <h1> Ciudades </h1>
+            </div>
+        </div>
+    </div>
+    @*<p>
+             @Html.ActionLink("Nuevo", "Create",null,new { @class = "btn btn-success toolbar-item" })
+        </p>*@
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+        Nuevo
+    </button>
+
+
+
+
+
+    <div class="table-responsive">
+
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+
+            <table class="table table-striped table-bordered table-hover dataTables-example dataTable dtr-inline" id="tbl" aria-describedby="tabla_evento_info" role="grid">
+                <thead>
+                    <tr>
+
+                        <th>
+                            Ciudad
+                        </th>
+                        <th>
+                            Departamento
+                        </th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ciu_descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.tb_departamentos.dep_descripcion)
+                        </td>
+                        <td>
+                            @*@Html.ActionLink("Editar", "Edit", new { id=item.ciu_id }, new { @class = "btn btn-success  btn-xs" }) |*@
+                            <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#EditarModal">
+                                Editar
+                            </button>
+                            @Html.ActionLink("Detalle", "Details", new { id = item.ciu_id }, new { @class = "btn btn-default btn-xs" }) |
+                            @Html.ActionLink("Inactivar", "Delete", new { id = item.ciu_id }, new { @class = "btn btn-danger btn-xs" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false" href="#">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <center><h4>Agregar Ciudad</h4></center>
+                    <hr>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>   Codigo </label>
+                        </div>
+                        <div class="col-md-9">
+                            <input class="form-control text-box single-line" id="ciu_id" name="ciu_id" type="text" value="">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="ciu_id" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>   Ciudad </label>
+                        </div>
+                        <div class="col-md-9">
+                            <input class="form-control text-box single-line" id="ciu_descripcion" name="ciu_descripcion" type="text" value="">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="ciu_descripcion" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>   Departamento </label>
+                        </div>
+                        <div class="col-md-9">
+                            <select class="form-control" id="dep_id" name="dep_id">
+                                <option value="05"></option>
+                            </select>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="dep_id" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-8 col-md-10">
+                            <input type="submit" value="Guardar" class="btn btn-success  ">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">Cancelar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false" href="#">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <center><h4>Editar Ciudad</h4></center>
+                    <hr>
+
+                    <input id="ciu_id" name="ciu_id" type="hidden" value="CIU-02">
+
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>   Descripcion </label>
+                        </div>
+                        <div class="col-md-9">
+                            <input class="form-control text-box single-line" id="ciu_descripcion" name="ciu_descripcion" type="text" value="choloma">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="ciu_descripcion" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>   Departamento </label>
+                        </div>
+                        <div class="col-md-9">
+                            <select class="form-control" id="dep_id" name="dep_id">
+                                <option selected="selected" value="05"></option>
+                            </select>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="dep_id" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-8 col-md-10">
+                            <input type="submit" value="Guardar" class="btn btn-success toolbar-item ">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">Cancelar</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
