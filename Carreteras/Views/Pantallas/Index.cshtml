@@ -1,0 +1,158 @@
+﻿@model IEnumerable<Carreteras.Models.tb_pantallas>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="container">
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-offset-5">
+
+                <h1> -- Pantallas -- </h1>
+            </div>
+        </div>
+    </div>
+    <p>
+        @*@Html.ActionLink("Nuevo", "Create",null,new { @class = "btn btn-success toolbar-item" })*@
+        <button type="button" class="btn btn-success toolbar-item" data-toggle="modal" data-target="#exampleModal">
+            Nuevo
+        </button>
+    </p>
+
+
+
+
+
+    <div class="table-responsive">
+
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+
+            <table class="table table-striped table-bordered table-hover dataTables-example dataTable dtr-inline" id="tbl" aria-describedby="tabla_evento_info" role="grid">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.pant_id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.pant_descripcion)
+                        </th>
+
+
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.pant_estado)
+                        </th>
+
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.pant_id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.pant_descripcion)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.pant_estado)
+                        </td>
+
+                        <td>
+                            <button type="button" class="btn btn-success  btn-xs" data-toggle="modal" data-target="#exampleModal2">
+                                Editar
+                            </button>
+                            @*@Html.ActionLink("Editar", "Edit", new { id = item.pant_id }, new { @class = "btn btn-success  btn-xs" }) |*@
+                            @Html.ActionLink("Detalle", "Details", new { id = item.pant_id }, new { @class = "btn btn-default btn-xs" }) |
+                            @Html.ActionLink("Inactivar", "Delete", new { id = item.pant_id }, new { @class = "btn btn-danger btn-xs" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false" href="#">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="exampleModalLabel">Agregar Registro</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+
+                                    <article><input type="text" class="form-control" id="formGroupExampleInput" placeholder="Codigo Pantalla"></article>
+                                </div>
+                                <br> <br>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Descripcion Pantalla">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-success toolbar-item" data-dismiss="modal">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false" href="#">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="exampleModalLabel">Editar Registro</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+
+                                    <article><input type="text" class="form-control" id="formGroupExampleInput" placeholder="Codigo Pantalla"></article>
+                                </div>
+                                <br> <br>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Descripcion Pantalla">
+                                </div>
+                                <br> <br>
+                                     <div class="form-group">
+                                         <div class="dropdown">
+                                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                 Estado
+                                             </button>
+                                             <div class="dropdown-menu">
+                                                 <h4><a class="dropdown-item" href="#">Activo</a></h4>
+                                                 <br />
+                                                 <h4><a class="dropdown-item" href="#">Inactivo</a></h4>
+                                             </div>
+                                         </div>
+                                     </div>
+                             
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-success toolbar-item" data-dismiss="modal">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ </div>
+  </div>
+
+
+
+
+
