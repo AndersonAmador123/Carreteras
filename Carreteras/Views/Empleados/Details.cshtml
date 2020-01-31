@@ -5,14 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalle Empleado</h2>
 
 <div>
-    <h4>tb_empleados</h4>
+   
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.emp_nombre)
+         Nombre
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.emp_edad)
+          Edad
         </dt>
 
         <dd>
@@ -28,64 +28,75 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.emp_telefono)
+          Telefono
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.emp_telefono)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.emp_fecha_crea)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.emp_fecha_crea)
-        </dd>
+      
 
         <dt>
-            @Html.DisplayNameFor(model => model.emp_fecha_modifica)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.emp_fecha_modifica)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.emp_estado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.emp_estado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_ciudades.ciu_descripcion)
+          Ciudad
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.tb_ciudades.ciu_descripcion)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_usuarios.usu_descripcion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_usuarios.usu_descripcion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_usuarios1.usu_descripcion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_usuarios1.usu_descripcion)
-        </dd>
+       
 
     </dl>
 </div>
-<p>
+<div class="col-md-offset-10 col-md-10">
     @Html.ActionLink("Editar", "Edit", new { id = Model.emp_id }, new { @class = "btn btn-success  " }) |
-    @Html.ActionLink("Cancelar", "Index",null,new { @class = " btn btn-default" })
-</p>
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = " btn btn-default" })
+</div>
+
+    <h3>Auditoria</h3>
+    <table class="table table-striped table-bordered table-hover   dtr-inline" id="tbl" aria-describedby="tabla_evento_info" role="grid">
+        <thead>
+            <tr>
+
+                <th>
+                    Accion
+                </th>
+
+                <th>
+                    Usuario
+                </th>
+
+                <th>
+                    Fecha
+                </th>
+
+            </tr>
+        </thead>
+
+
+        <tr>
+            <td>
+                Crea
+            </td>
+            <td>
+                Giezi
+            </td>
+            <td>
+                12/12/29020
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                Modifica
+            </td>
+            <td>
+                Jose
+            </td>
+            <td>
+                11/11/2020
+            </td>
+
+        </tr>
+    </table>

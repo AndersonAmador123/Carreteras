@@ -12,7 +12,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.tra_descripcion)
+           Descripcion
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tra_km_inicio)
+           Km Inicio
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tra_km_fin)
+           Km Final
         </dt>
 
         <dd>
@@ -60,7 +60,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tb_carreteras.car_descripcion)
+           Carretera
         </dt>
 
         <dd>
@@ -84,25 +84,51 @@
             </dd>*@
 
     </dl>
-    <table id="example" class="table table-striped table-bordered" style="width:100%">
+    <h3>Auditoria</h3>
+    <table class="table table-striped table-bordered table-hover   dtr-inline" id="tbl" aria-describedby="tabla_evento_info" role="grid">
         <thead>
             <tr>
-                <th> @Html.DisplayNameFor(model => model.tra_usuario_crea) </th>
-                <th>  @Html.DisplayNameFor(model => model.tra_fecha_crea)</th>
-                <th> @Html.DisplayNameFor(model => model.tra_usuario_modifica)</th>
-                <th>  @Html.DisplayNameFor(model => model.tra_fecha_modifica)</th>
+
+                <th>
+                    Accion
+                </th>
+
+                <th>
+                    Usuario
+                </th>
+
+                <th>
+                    Fecha
+                </th>
 
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>  @Html.DisplayFor(model => model.tra_usuario_crea) </td>
-                <td>@Html.DisplayFor(model => model.tra_fecha_crea) </td>
-                <td> @Html.DisplayFor(model => model.tra_usuario_modifica)</td>
-                <td> @Html.DisplayFor(model => model.tra_fecha_modifica)</td>
 
-            </tr>
-        </tbody>
+
+        <tr>
+            <td>
+                Crea
+            </td>
+            <td>
+                Giezi
+            </td>
+            <td>
+                12/12/29020
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                Modifica
+            </td>
+            <td>
+                Jose
+            </td>
+            <td>
+                11/11/2020
+            </td>
+
+        </tr>
     </table>
 </div>
 <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false" href="#">
